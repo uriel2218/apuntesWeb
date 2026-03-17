@@ -1,0 +1,28 @@
+Unidad 2, Planeación de aplicaciónes web
+
+    Definición y análisis del sistema
+
+        * Entender el negocio y el alcance 
+        * Describir y acordar Requerimientos
+        * Modelar para comunicar
+
+
+    Formalización y preparación técnica
+
+        * Documentación en el SR
+        * Validación pre-construcción
+        * Selección de herramientas y Planeación
+
+    ¿Qué es el SRS?
+
+        Es un documento formal que describe el comportamiento y la implicación de una aplicación de software.
+        Es el plano que guía a los desarrolladores para construir una solución correcta.
+
+        Objetivo: ¿Qué problema va a resolver?
+
+    Requisitos funcioinales
+
+        El sistema deberá ___________ + ____________ ---> condición o resultado. 
+                            acción         objeto
+
+    

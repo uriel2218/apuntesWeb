@@ -1,0 +1,112 @@
+Protocolos web y arquitectura de servicios: HTP, HTTPS, SOAP y REST
+
+    Protocolo HTTP:
+
+        El protocolo Hiper Text Tranfer Protocol es un protocolo basado en texto.
+        Es un protocolo sin estado (trata a cada request-response de forma independiente).
+        Es flexible, puede transferir HTML, JSON, imágenes y video.
+
+                        Request
+        CLIENTE <--------HTTP--------> SERVIDOR
+                        Response 
+        Métodos:
+
+            * GET: Obtiene/consulta datos (Ej. ver lista de usuarios)
+            * POST: Crea nuevos recursos (Ej. registrar un usuario)
+            * PUT: Actualiza recursos existentes (Ej. modificar perfil de usuario)
+            * DELETE: Elimina recursos (Ej. Borrar productos del carrito)
+
+        Anatomía:
+            
+            HTTP/1.1 200 OK <----------------Código de estado.
+            Content - Type: text/html 
+
+            <html>
+                <body>...</body>
+            </html>
+
+        Códigos de estado:
+
+            * 2xx (Éxito): 200 OK,201; Todo bien.
+            * 3xx (Redirección): 301 Moved, El recurso se movió.
+            * 4xx (Error del cliente): 
+                404 Not Found; Pediste algo que no existe
+                400 Peticion mal formulada
+                401 Autenticación
+                403 Forbiden, Niega el acceso
+                422 Datos inválidos
+                405 Método no permitido
+
+            * 5xx (Error del servidor): 
+                500 Internal Error; Culpa del servidor.
+                502 Bad Gateway
+                503 Servidor temporalmente deshabilitado
+
+
+    Protocolo HTTPS y los tres pilares de la seguridad:
+
+        * Confidencialidad: Los datos se cifran, no son legibles para terceros.
+        * Integridad: Garantiza que los datos no fueron modificados en el tránsito.
+        * Autenticación: Verifica que estas conectado al servidor real.
+
+        El certificado SSL/TLS y la Validación
+
+            Pide conexión segura --> Envía certificado --> Firma de la autoridad/Dominio Correcto/Fecha válida --> Conexión cifrada
+                                                                              (Validación)
+
+    Servicios Web: Comunicación máquina a máquina
+
+        Es un sistema que permite la interacción entre aplicaciónes diferentes.
+
+        App del clima <--> Internet <--> Servidor Meteorológico
+          (Python)       (HTTP/JSON)            (Java)
+
+        Características:
+
+            * Interoperatibidad
+            * Sin interfaz gráfica (Solo backend)
+            * Estándares universales
+
+        REST (Representational State Transfer): "Mas ágil"
+
+            * Arquitectura flexible
+            * Usa verbos HTTP nativos
+            * Formato ligero
+            * Stateless
+
+        SOAP (Simple Object Access Protocol): "Mas robusto"
+
+            * Formato XML estricto
+            * Requiere contrato (WSDL)
+            * Alta seguridad (Banca/Enterprise)
+
+
+        Característica    | REST               | SOAP
+        ------------------------------------------------------------------
+        Formato           | JSON/Texto(Ligero) | Solo XML 
+        Complejidad       | Flexible y simple  | Estricto y complejo
+        Contrato          | Opcional           | Obligatorio (WSDL)
+        Uso Ideal         | Web/Móvil moderno  | Banca / Sistemas Legacy
+
+
+    En resumen...
+
+        HTTP: 
+            Protocolo base Stateless
+            Usa verbos (GET / POST)
+            Usa códigos de estado
+
+        HTTPS: 
+            Seguridad obligatoria
+            Cifrado, Integridad
+            Autenticación via SSL/TLS
+
+        SOAP:
+            Protocolo robusto basado en XML
+            Estándar para operaciiiones críticas y bancarias
+        
+        REST:
+            Arquitectura moderna basada en recursos JSON
+            Estándar para el 90% de las API's web.
+
+        

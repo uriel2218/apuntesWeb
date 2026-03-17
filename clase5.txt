@@ -1,0 +1,75 @@
+Unidad 3: Frontend
+
+    * HTML --> Estructura
+    * CSS --> Estilo
+    * JS --> Funcionalidad
+
+
+    HTML.
+
+        No diseña visualmente ni ejecuta lógica matemática, su única funcion es estructurar
+        la página, indicandole al navegador qué elementos existen y como se anidan mediante un modelo 
+        matemático de árbol.
+
+                            Etiquetas
+                            <Etiqueta attributos> contenido
+                            </Etiqueta>
+
+                                Atributos       Contenido 
+                                    ^              ^
+                                    |              |
+                                    |              |
+                            <a href="url">Ir a Google</a>
+                            |                           |
+                            |                           |
+                            v                           v
+                        Nombre de la                Etiqueta de
+                        etiqueta.                       cierre
+
+
+        Estructura:
+
+            <!DOCTYPE html>
+            <html> (Contenido maestro: El nodo raíz que envuelve todo)
+            <head> (El cerebro oculto: contiene metadatos invisibles. Incluyen la etiqueta <title>, 
+                    crucial para motores de busqueda [SEO] y el nombre de la pestaña)
+            <body> (El lienzo visible: Es el contenedor principal donde reside el 100% de la interfaz gráfica e interactiva)
+
+            Heading:
+                 h1: titulo
+                 h2: subtitulo
+                 .
+                 .
+                 .
+            Para hacer un comentario:
+
+                <!-- "aquí va tu comentario"-->
+
+            Para dar saltos de línea: <br>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Obcaecati ducimus, corrupti officia illo dolore quis ad, <br> exercitationem mollitia dignissimos ipsam aliquid quasi velit odio similique nostrum distinctio, <br> repellat assumenda soluta!</p>
+
+            Para consultar como dar estilos, visitar la página www.W3Schools.com  HTML > HTML Formatting 
+
+            Para hacer un link a otra página:
+
+                <a href="link o ruta destino"> texto que aparezca en la página </a>
+
+                En caso de que se quiera abrir una pestaña nueva:
+
+                    <a target="_blank" href="link o ruta destino"> texto que aparezca en la página </a>
+            
+            Para agregar una imágen: La imágen debe de estar en el mismo directorio que 
+            nuestro .html 
+
+                <img src="nombre del archivo" alt="Descripción" width="ancho%">
+
+                Para poder poner un link en una imágen:
+
+                    <a href="link destino"> 
+                        <img src="nombre de la imágen" alt="descripción" width="45%" height="2%">
+                    </a>
+
+
+
+        

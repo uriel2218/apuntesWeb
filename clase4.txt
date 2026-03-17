@@ -1,0 +1,9 @@
+Actores y casos de uso.
+
+    Actores:           |Casos de uso 
+
+        * Cliente      |Agendar cita    
+        * Recepconista |Agendar cita
+        * Veterinario
+        * Admistrador  |Agendar cita
+

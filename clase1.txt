@@ -1,0 +1,88 @@
+Definición de aplicación web:
+
+    software que se ejecuta en un servidor y se utiliza a travéz de un navegador web, 
+    permitiendo a los usuarios realizar tareas, gestionar información e interactuar con datos 
+    sin la necesidad de instalar un programa en su computadora.
+
+
+Sitio web diferente a aplicación web por su forma de interactuar con el usuario
+
+Modelo Cliente-Servidor:
+
+    * Cliente: Se encarga del funcionamiento de la interfaz de usuario, el navegador web carga el script del lado del cliente
+             y renderiza los elementos gráficos y el texto para la interacción del usuario.
+
+    * Servidor: Se encarga del procesamiento de datos, procesa las solicitudes del cliente y envía una respuesta de vuelta. 
+              Se enfoca en la lógica del negocio y entrega documentos tras validar permisos. 
+              Usa herramientas como PHP, Java, Python, JavaScript, etc.
+
+    Cliente accede a un servidor a travez de una petición (request), servidor responde con una respuesta (response).
+
+
+Arquitectura de una aplicación:
+
+    Es la estructura que define como se organizan los componentes de un sistema, como se comunicam entre si 
+    y como se despliega la aplicación.
+
+    Arquitectura en capas:
+
+        * Capa de presentación:
+
+            Se encarga de la interacción con el usuario, Su funcion principal es mostrar información y recibir datos del usuario
+            para enviarlo al sistema.
+        
+        * Capa de Lógica de negocio:
+
+            Es la que contiene mas reglas y procesos principales del sistema. Aquí se decide como funciona realmente la aplicación
+            Es el cerebro del sistema
+        
+        * Capa de datos:
+
+            Se encarga de almacenar, recuperar y gestionar la información del sistema. Maneja el acceso a base de datos.
+
+Flujo de datos en una app web:
+
+    * Frontend:
+
+        Es la interfaz de usuario de el navegador. Los elementos visuales con los que interactuas directamente. Captura entrada 
+        y muestra datos.
+
+    * API (Interfaz de Aplicación de Aplicaciónes):
+
+        Conjunto de reglas y protocolos que permiten la comunicación entre el Front y el Backend y otros servicios, facilitando el
+        intercambio de información.
+
+    * Backend: 
+
+        Es el "cerebro" de la aplicación. Gestiona la lógica de negocio, procesa las solicitudes del Front, interactua con la base
+        de datos y envía respuestas.
+
+    * Base de datos:
+
+        Almacena y organiza toda l información y datos necesarios para el funcionamiento de la aplicación.
+
+Patrón Model Viewer Controller:
+
+    * Model: 
+        Gestiona los datos, la lógica de negocio y la interacción con la base de datos (CRUD). No sabe cómo se mostrarán los datos.
+
+    * Viewer: 
+        Representa la interfaz de usuario, encargándose del diseño y la presentación final (HTML, pantallas).
+
+    * Controller: 
+         Actúa como intermediario entre el modelo y la vista. Recibe las acciones del usuario (peticiones HTTP), 
+         procesa la lógica y actualiza la vista y el modelo. 
+
+
+
+Existen diferentes tipos de Arquitectura:
+
+    * Monolítica: todo en uno
+
+    * Microservicios: se divide en pequeños servicios intercomuniicados por API's.
+
+    * Basada en la nube: Infraestructura, almecenamiento y servicios estan en la nube.
+
+    * Nativa de la nube: Diseñada para aprovechar los servicios e infraestructura de nube, usando contenedores. DevOps, integración cont
+
+    * Sin servidor.
