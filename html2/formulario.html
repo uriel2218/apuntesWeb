@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Formularios</h1>
+
+    <br>
+    <form action="formulario.php" method="get">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre">
+
+        <label for="ckeck"><br>Checkbox</label>
+        <input type="checkbox" id="check" name="check">
+
+        <label for="Archivo"><br>Archivo</label>
+        <input type="file" id="archivo" name="archivo">
+
+        <h3>Botón de alerta</h3>
+        <input type="button" onclick="alert('Hello World!')" value="Click Me!">
+
+        <label for="Color"><br>Selecciona un color:</label>
+        <input type="color" id="color" name="color">
+
+
+        <label for="comentario"><br>Agregar comentarios</label>
+        <textarea name="comentario" id="comentario" rows="15" cols="50">Comentario</textarea>
+        <button type="reset">Limpiar</button>
+        <button type="submit">Enviar formulario</button>
+        <button type="button">Botón</button>
+
+    </form>
+    </br>
+</body>
+</html>

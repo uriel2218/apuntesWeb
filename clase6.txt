@@ -1,0 +1,24 @@
+Tablas
+
+    Para hacer una tabla se debe de seguir la siguiente estructura:
+
+        <table>
+            <thead>
+                <!--Encabezado-->
+                <tr>
+                    <th>Campo 1<th>
+                    <th>Campo 2<th>
+                    <th>Campo 3<th>
+                    <th>Campo 4<th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Cuerpo de la tabla -->
+                <tr>
+                    <td>Contenido 1</td>
+                    <td>Contenido 2</td>
+                    <td>Contenido 3</td>
+                    <td>Contenido 4</td>
+                </tr>
+            </tbody>
+        </table>
