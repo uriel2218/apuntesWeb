@@ -1,0 +1,50 @@
+/* Comentario en CSS */
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Selector por párrfos*/
+p{
+    color:blue;
+}
+
+/* Selector por clase */
+.seccion1{
+
+    color: brown;
+}
+
+/* Selector por id */
+#seccion2{
+
+    color: yellowgreen;
+}
+
+/*Clases encadenadas*/
+
+p.texto{
+    color: aquamarine;
+}
+
+p.especial{
+
+    color: chocolate;
+}
+
+/* Selector por coma */
+h2, h4{
+    color: chartreuse;
+}
+
+/*Selectores anidados*/
+
+div p{
+    color: pink;
+}
+
+.cuadrito{
+    background-color: palevioletred;
+}

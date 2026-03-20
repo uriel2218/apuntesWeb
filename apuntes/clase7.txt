@@ -1,0 +1,42 @@
+Reglas del etiquetado único
+    id - identificador único.
+        1 solo elemento
+        Formularios
+
+    class - Agrupar elementos en común
+        Se puede repetir
+        estilo
+        <section class=" ">
+
+    Si HTML da estructura, CSS da estilo.
+
+    En CSS:
+
+        Los selectores se ponen:
+
+            selector {
+                propiedad:valor;
+            }
+    
+        Esto, en la carpeta de estilos "style.css".
+
+        Para que esto funcione, en el head del html debemos de agregar la sig. linea:
+            <link rel="stylesheet" href="style.css">
+
+        A qué se le puede aplicar estilo?:
+
+            * Etiqueta: p (Afecta a todos los párrafos)
+            * Clase: .texto (Afecta a un elemento único con el id='titulo') 
+            * Universal: * (Selecciona absolutamente todo en el DOM)
+            * Descendiente: div p (Selecciona párrafos dentro de contenedores div)
+
+            El orden de lectura importa: la última regla escrita gana en caso de empate:
+
+                |
+                |   Etiqueta
+                |   Clase
+                |   ID 
+                V
+
+
+
