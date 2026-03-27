@@ -10,7 +10,7 @@ Reglas del etiquetado único
 
     Si HTML da estructura, CSS da estilo.
 
-    En CSS:
+    En CSS (Cascade Style Shooting):
 
         Los selectores se ponen:
 
@@ -38,5 +38,13 @@ Reglas del etiquetado único
                 |   ID 
                 V
 
+
+        Colores:
+
+            #RGB
+
+            rgba(0,0,0,0)
+            hsl(0,0,0)
+            
 
 

@@ -1,0 +1,11 @@
+CSS.
+
+    Font:
+
+        * font-size: tamaño
+        * font-family: estilo (typo)
+        * font-weight: negrita
+
+        Para añadir una fuente nueva, nos vamos a Google Fonts >
+        Elegimos una fuente > Get Font > Get Embebed Code > 
+        Copiamos el codigo al header > Aplicamos el codigo en CSS.

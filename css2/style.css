@@ -1,0 +1,16 @@
+.titulo{
+
+    color: blue;
+    font-family: "Shizuru", system-ui;
+    
+
+}
+
+#fondo{
+
+        background-color: blueviolet;
+        background-image: url(abbeyRoad.jpg);
+        height: 300px;
+        background-repeat: no-repeat;
+
+}
