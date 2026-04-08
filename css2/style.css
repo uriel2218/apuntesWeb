@@ -10,7 +10,25 @@
 
         background-color: blueviolet;
         background-image: url(abbeyRoad.jpg);
-        height: 300px;
-        background-repeat: no-repeat;
+        height: 3000px;
+        width: 3000px;
+        background-repeat: repeat-x;
+        background-position: right top;
+}
 
+#caja{
+
+    background-color: brown;
+    border: 5px dotted darkorange;
+    border-radius: 100px;
+    border-style: groove;
+    padding: 100px, 20px, 50px, 5px;
+    margin: 100px solid yellow;
+}
+
+.contenedor{
+
+    width: 300px;
+    border: 10px dotted brown;
+    background-color: yellow;
 }

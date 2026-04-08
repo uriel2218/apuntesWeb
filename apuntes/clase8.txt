@@ -9,3 +9,11 @@ CSS.
         Para añadir una fuente nueva, nos vamos a Google Fonts >
         Elegimos una fuente > Get Font > Get Embebed Code > 
         Copiamos el codigo al header > Aplicamos el codigo en CSS.
+
+    El modelo de caja:
+
+        El content se encuentra dentro de un border, y lo que separa el content del border se llama padding
+
+        Para modificaar el padding se sigue la lógica de las manecillas del reloj:
+
+            padding: 10px (top), 20px(right), 50px(bottom), 5px(left);

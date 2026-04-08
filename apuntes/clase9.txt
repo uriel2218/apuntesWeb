@@ -1,0 +1,6 @@
+Visulizar elementos
+
+    display: block {p, div}
+    display: inline {span, a}
+    display: inline-block
+    

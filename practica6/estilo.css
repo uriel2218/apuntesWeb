@@ -1,0 +1,72 @@
+h1{
+    color: blue;
+}
+
+a:link{
+    color: blueviolet;
+}
+
+a:visited{
+    color: red;
+}
+
+a:hover{
+    color: green;
+}
+
+a:active{
+    color: yellow;
+}
+
+span{
+    display: block;
+    background-color: brown;
+    width: 50%;
+}
+
+cuadro1{
+    display: inline;
+}
+
+.contenedor{
+    background-color: chartreuse;
+    padding: 5px;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    /*flex-direction: column;*/
+    justify-content: space-between;
+    align-items:center;
+    height: 500px;
+}
+
+.box{
+    border: 3px solid black;
+    margin: 15px;
+    text-align: center;
+    width: 150px;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td{
+    border: solid 1px black;
+    padding: 5px;
+}
+
+thead th{
+    background-color: darkkhaki;
+    text-align: left;
+}
+
+tr:nth-child(even){
+    background-color: lightgray;
+}
+
+tr:hover{
+    background-color: cyan;
+    cursor: pointer;
+}
