@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veterinaria Patitas Felices</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <img class="logo" src="img/logo.jpg" alt="Logo de veterinaria">
+    <h1> Veterinaria Patitas Felices</h1>
+  </header>
+
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#cita">Genera tu cita</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+
+  <section id="inicio">
+    <div class="eslogan">
+      <h2>Centro Veterinario</h2>
+      <p>Contamos con más de 20 años de experiencia nos respaldan.</p>
+    </div>
+  </section>
+
+  <section id="servicios">
+    <h2 class="secciones">Nuestros servicios</h2>
+    <div class="contenedor">
+
+      <article class="tarjeta">
+        <h3>Consulta veterinaria</h3>
+        <img src="img/consulta.jpg" alt="Consulta">
+        <p>Nuestro servicio de consulta veterinaria se enfoca en 
+          cuidar la salud y el bienestar de tu mascota en cada etapa de su vida. 
+          Durante la consulta realizamos una revisión completa para evaluar su estado general, 
+          detectar posibles  enfermedades y brindarte recomendaciones personalizadas 
+          sobre alimentación, higiene y cuidados diarios.
+        </p> 
+      </article>
+
+      <article class="tarjeta">
+        <h3>Estética</h3>
+        <img src="img/estetica.jpg" alt="Estetica">
+        <p>
+          Ofrecemos servicios de estética para mantener a tu mascota limpia, 
+          saludable y con una apariencia impecable. Realizamos baño, corte de pelo, 
+          cepillado y limpieza básica, utilizando productos adecuados para cada tipo 
+          de piel y pelaje. Nuestro objetivo es que tu mascota se sienta cómoda y salga 
+          luciendo y sintiéndose mejor.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section id="cita">
+    <h2 class="secciones">Genera tu cita</h2>
+
+    <div class="contenedor">
+
+      <p class="instrucciones">Llena el siguiente formulario para poder agendar tu cita</p>
+
+      <div class="tarjeta">
+        <form id="formCita">
+          <label for="nombreMascota">Nombre del paciente</label>
+          <input type="text" id="nombreMascota" name="nombreMascota" placeholder="Nombre de tu mascota">
+          <br>
+
+          <label for="tipoMascota">Tipo de mascota</label>
+            <select id="tipoMascota" name="tipoMascota">
+              <option value="">Seleccione</option>
+              <option value="perro">Perro</option>
+              <option value="gato">Gato</option>
+              <option value="ave">Ave</option>
+              <option value="otro">Otro</option>
+            </select>
+          <br>
+
+          <label for="fecha">Fecha de la consulta</label>
+          <input type="date" id="fecha" name="fecha">
+          <br>
+
+          <label for="nombrePersona">Nombre del dueño</label>
+          <input type="text" id="nombrePersona" name="nombrePersona" placeholder="Ingresa el nombre del dueño">
+          <br>
+
+          <label for="telefonoPersona">Telefono del dueño</label>
+          <input type="text" name="telefonoPersona" id="telefonoPersona">
+          <br>
+
+          <div class="botones">
+            <button type="reset">Limpiar</button>
+            <button type="submit">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="cita">
+    <h2 class="secciones">Citas agendadas</h2>
+    <br>
+    <ul id="listaCitas">
+      
+        
+    </ul>
+  </section>
+
+  <footer>
+    <p>Copyright 2026</p>
+  </footer>
+  <script src="funcion.js"></script>
+</body>
+</html>
