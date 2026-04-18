@@ -7,8 +7,13 @@ const productos = [
 ];
 
 function agregar(id){
+  const cantidadActual = carrito.reduce((suma, p) => suma + p.cantidad, 0);
+  if(cantidadActual >= 10){
+    alert("No puedes tener más de 10 productos en el carrito.");
+    return; 
+  }
+  
   const producto = productos.find(p => p.id === id);
-
   const existente = carrito.find(p => p.id === id);
 
   if(existente){
@@ -40,6 +45,7 @@ function mostrarCarrito(){
       ${item.nombre} 
       | Cantidad: ${item.cantidad} 
       | Subtotal: $${item.precio * item.cantidad}
+      <button class="btn btn-success btn-sm mx-1" onclick="btnSumar(${index})">+</button>
       <button class="btn btn-danger btn-sm mr-5" onclick="eliminar(${index})">-</button>
     `;
 
@@ -62,4 +68,23 @@ function eliminar(index){
   }
 
   mostrarCarrito();
+}
+
+function btnSumar(index){
+
+  const cantidadActual = carrito.reduce((suma, p) => suma + p.cantidad, 0);
+  if(cantidadActual >= 10){
+    alert("No puedes tener más de 10 productos en el carrito.");
+    return; 
+  }
+  
+    carrito[index].cantidad++;
+    mostrarCarrito();
+
+}
+
+function vaciarCarrito(){
+    carrito = [];
+    mostrarCarrito();
+
 }
