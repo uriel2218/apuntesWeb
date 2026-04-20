@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayGest - Confirmación de Reserva</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom py-3">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <i class="bi bi-puzzle-fill fs-3 text-warning"></i>
+                <span class="fs-4 fw-normal text-dark">PlayGest</span>
+            </a>
+            <div class="ms-auto">
+                <button class="btn btn-outline-primary rounded-3 px-3">
+                    <i class="bi bi-house-door me-2"></i>Volver al Inicio
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                
+                <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                    <div class="py-3 text-center" style="background-color: #2435b3;">
+                        <i class="bi bi-check-circle-fill text-white display-4"></i>
+                    </div>
+
+                    <div class="card-body p-5 text-center">
+                        <h2 class="fw-bold mb-3">¡Solicitud Recibida!</h2>
+                        <p class="text-muted mb-4">
+                            Tu solicitud de préstamo ha sido registrada correctamente. Un administrador revisará la disponibilidad del juego en las próximas 24 horas.
+                        </p>
+
+                        <div class="bg-light border border-dashed rounded-4 p-4 mb-4">
+                            <span class="text-uppercase small fw-bold text-muted d-block mb-2">Código de Confirmación</span>
+                            <h3 class="display-6 fw-mono text-primary mb-0" id="confirmationCode" style="min-height: 45px;"></h3>
+                        </div>
+
+                        <div class="text-start mb-0">
+                            <h6 class="fw-bold border-bottom pb-2">Detalles del resumen:</h6>
+                            <ul class="list-unstyled small mb-0">
+                                
+                                <li class="d-flex justify-content-between align-items-start mb-2">
+                                    <span class="text-muted">Juego(s):</span>
+                                    <div id="listaJuegos" class="text-end fw-medium" style="min-height: 21px;"></div>
+                                </li>
+                                
+                                <li class="d-flex justify-content-between align-items-center">
+                                    <span class="text-muted">Estado:</span>
+                                    <div id="estatusReservacion" style="min-height: 21px;"></div>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>

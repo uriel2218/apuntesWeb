@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayGest - Solicitud de Préstamo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body class="bg-white">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom py-3">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <i class="bi bi-puzzle-fill fs-3 text-warning"></i>
+                <span class="fs-4 fw-normal text-dark">PlayGest</span>
+            </a>
+            
+            <div class="d-none d-lg-flex align-items-center gap-3 ms-4">
+                <button class="btn btn-outline-primary rounded-3 px-3">
+                    <i class="bi bi-house-door me-2"></i>Inicio
+                </button>
+                <button class="btn btn-outline-primary rounded-3 px-3">
+                    <i class="bi bi-code-slash me-2"></i>Juegos
+                </button>
+                <button class="btn btn-outline-primary rounded-3 px-3">
+                    <i class="bi bi-briefcase me-2"></i>Realizar Préstamo
+                </button>
+            </div>
+
+            <div class="ms-auto">
+                <div class="input-group bg-light rounded-pill px-3 py-1 border">
+                    <input type="text" class="form-control bg-transparent border-0 shadow-none" placeholder="Busca algo" aria-label="Search">
+                    <span class="input-group-text bg-transparent border-0 pe-1">
+                        <i class="bi bi-search text-muted"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container-fluid p-0">
+        <div class="row g-0">
+            <div class="col-md-3 d-flex align-items-center justify-content-center py-5" style="background-color: #3b3bc2; min-height: 600px;">
+                <h1 class="display-3 fw-bold text-dark opacity-50 user-select-none">
+                    
+                </h1>
+            </div>
+
+            <div class="col-md-9 d-flex justify-content-center align-items-center py-5 bg-white">
+                
+                <div class="card border border-2 shadow-sm rounded-4 p-4" style="width: 100%; max-width: 450px;">
+                    <h4 class="fw-bold mb-4">Solicitud de Préstamo de Juego</h4>
+                    
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold mb-1">Nombre de Usuario</label>
+                            <input type="text" class="form-control" placeholder="Escribe tu usuario">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold mb-1">Número de Personas</label>
+                            <input type="text" class="form-control" placeholder="ej. 4">
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold mb-1">Nombre del Juego</label>
+                            <select class="form-select text-muted">
+                                <option selected>Selecciona un juego</option>
+                                <option value="1">Juego 1</option>
+                                <option value="2">Juego 2</option>
+                                <option value="3">Juego 3</option>
+                                <option value="4">Juego 4</option>
+                                <option value="5">Juego 5</option>
+                                <option value="6">Juego 6</option>
+                                <option value="7">Juego 7</option>
+                                <option value="8">Juego 8</option>
+                            </select>
+                        </div>
+
+                        <button type="button" class="btn btn-primary w-100 rounded-pill py-2 mb-2" style="background-color: #2435b3; border-color: #2435b3;">
+                            Enviar Solicitud de Préstamo
+                        </button>
+                        
+                        <p class="text-center text-dark small fw-medium mb-3">
+                            *La solicitud se procesará en las próximas 24 horas.*
+                        </p>
+
+                        <button type="button" class="btn btn-outline-dark w-100 rounded-pill py-2">
+                            Solicitar apoyo técnico
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="container-fluid px-5 py-5 border-top mt-4 bg-white">
+        <div class="row">
+
+            <div class="col-6 col-md-3 mb-4">
+                <h6 class="text-muted fw-bold mb-3">Nuestras redes sociales</h6>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="#" class="text-dark text-decoration-none">X / Twitter</a></li>
+                    <li class="mb-2"><a href="#" class="text-dark text-decoration-none">Instagram</a></li>
+                    <li class="mb-2"><a href="#" class="text-dark text-decoration-none">Facebook</a></li>
+                    <li class="mb-2"><a href="#" class="text-dark text-decoration-none">TikTok</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    
+</body>
+</html>
