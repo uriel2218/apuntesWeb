@@ -1,0 +1,640 @@
+/* el * aplica esto a TODOS los elementos de la pagina */
+* {
+  margin: 0;
+  /* quita el espacio exterior en todo */
+
+  padding: 0;
+  /* quita el espacio interior en todo */
+
+  box-sizing: border-box;
+  /*se queda dentro del ancho definido */
+}
+
+body {
+  font-family: Arial, sans-serif;
+
+  background-color: #dcdce9;
+}
+
+
+/* ================================
+   NAVEGACION
+================================ */
+
+/* nav selecciona la etiqueta <nav> del HTML */
+nav {
+  background-color: white;
+  /* Fondo blanco para la barra */
+
+  padding: 14px 20px;
+  /* Espacio adentro: 14px arriba/abajo, 20px izquierda/derecha */
+
+  border-bottom: 1px solid #ccc;
+  /* Linea gris abajo de la barra para separar del contenido */
+
+  display: flex;
+  /* Pone los links uno al lado del otro en fila */
+
+  gap: 10px;
+  /* Espacio de 10px entre cada link */
+}
+
+/* nav a selecciona todos los <a> que esten dentro del <nav> */
+nav a {
+  text-decoration: none;
+  /* Quita el subrayado que tienen los links por defecto */
+
+  color: #555;
+  /* Gris oscuro para el texto */
+
+  padding: 6px 12px;
+  /* Espacio adentro del link para que sea mas facil de clickear */
+
+  border-radius: 6px;
+  /* Redondea las esquinas */
+}
+
+/* :hover se aplica cuando el mouse esta encima del elemento */
+nav a:hover {
+  background-color: #e0e0ff;
+  /* Fondo azul claro al pasar el mouse */
+
+  color: #1a1aff;
+  /* Texto azul */
+}
+
+/* .activo se aplica solo al link con class="activo" en el HTML */
+/* Es el link de la pagina donde estamos ahora mismo */
+nav a.activo {
+  background-color: #1a1aff;
+  /* Fondo azul para indicar que esta es la pagina actual */
+
+  color: white;
+  /* Texto blanco para que se vea sobre el azul */
+}
+
+
+/* ================================
+   TITULO PRINCIPAL
+================================ */
+
+/* h1 selecciona el titulo principal del HTML */
+h1 {
+  text-align: center;
+  /* Centra el titulo horizontalmente */
+
+  color: #1a1aff;
+  /* Azul para que combine */
+
+  margin: 28px 0 10px;
+  /* Espacio: 28px arriba, 0 a los lados, 10px abajo */
+}
+
+
+/* ================================
+   FILTROS
+   El buscador y el menu de dificultad
+================================ */
+
+/* El . antes del nombre significa que selecciona por class */
+/* .filtros selecciona el div con class="filtros" */
+.filtros {
+  text-align: center;
+  /* Centra el contenido adentro */
+
+  margin-bottom: 16px;
+  /* Espacio abajo antes del siguiente elemento */
+}
+
+/* .filtros input selecciona el input que esta DENTRO del div.filtros */
+.filtros input {
+  padding: 8px;
+  /* Espacio adentro para que el texto no quede pegado al borde */
+
+  border: 1px solid #ccc;
+  /* Borde gris alrededor */
+
+  border-radius: 6px;
+  /* Esquinas redondeadas */
+
+  font-size: 14px;
+  /* Tamaño del texto que escribe el usuario */
+
+  width: 240px;
+  /* Ancho fijo del buscador */
+}
+
+/* .filtros select selecciona el menu desplegable dentro del div.filtros */
+.filtros select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+
+  margin-left: 8px;
+  /* Separacion a la izquierda para que no quede pegado al buscador */
+}
+
+
+/* ================================
+   MENSAJE Y BOTON DE PRESTAMO
+================================ */
+
+/* El # selecciona por id. #mensaje-seleccion selecciona id="mensaje-seleccion" */
+#mensaje-seleccion {
+  text-align: center;
+  color: #1a1aff;
+  font-size: 14px;
+  margin-bottom: 8px;
+  /* Poco espacio abajo antes del boton */
+}
+
+/* #boton-prestamo selecciona el boton con id="boton-prestamo" */
+#boton-prestamo {
+  display: block;
+  /* Lo convierte en bloque para poder centrarlo con margin: auto */
+
+  margin: 0 auto 24px;
+  /* 0 arriba, auto a los lados (centra el elemento), 24px abajo */
+
+  padding: 10px 24px;
+  /* Espacio adentro del boton */
+
+  background-color: #1a1aff;
+  /* Fondo azul */
+
+  color: white;
+  /* Texto blanco */
+
+  border: none;
+  /* Quita el borde gris que tienen los botones por defecto */
+
+  border-radius: 8px;
+  /* Esquinas redondeadas */
+
+  font-size: 15px;
+  cursor: pointer;
+  /* Cambia el cursor a manita cuando el mouse esta encima */
+}
+
+#boton-prestamo:hover {
+  background-color: #1010cc;
+  /* Azul mas oscuro al pasar el mouse, da efecto de presionado */
+}
+
+/* #contador selecciona el parrafo con id="contador" */
+#contador {
+  text-align: center;
+  /* Centra el texto */
+
+  color: #555;
+  /* Gris para que no compita con el titulo azul */
+
+  font-size: 14px;
+  margin-bottom: 20px;
+  /* Espacio abajo antes de las cards */
+}
+
+
+/* ================================
+   CONTENEDOR DE CARDS
+   El div donde JS mete todas las tarjetas
+================================ */
+
+/* .tarjetas selecciona el div con class="tarjetas" */
+.tarjetas {
+  display: flex;
+  /* Pone las cards una al lado de la otra */
+
+  flex-wrap: wrap;
+  /* Si no caben en una fila, las que sobran bajan a la siguiente */
+
+  justify-content: center;
+  /* Centra las cards horizontalmente */
+
+  gap: 16px;
+  /* Espacio de 16px entre cada card */
+
+  padding: 0 20px 40px;
+  /* 0 arriba, 20px a los lados, 40px abajo */
+}
+
+
+/* ================================
+   CARD INDIVIDUAL DE CADA JUEGO
+================================ */
+
+/* .tarjeta selecciona cada div con class="tarjeta" que JS crea */
+.tarjeta {
+  background-color: white;
+  /* Fondo blanco para cada card */
+
+  border: 1px solid #ccc;
+  /* Borde gris alrededor */
+
+  border-radius: 10px;
+  /* Esquinas bien redondeadas */
+
+  padding: 16px;
+  /* Espacio adentro de la card */
+
+  width: 200px;
+  /* Todas las cards tienen el mismo ancho */
+
+  cursor: pointer;
+  /* Manita al pasar el mouse, indica que es clickeable */
+
+  transition: box-shadow 0.2s;
+  /* Animacion suave de 0.2 segundos cuando aparece la sombra */
+}
+
+.tarjeta:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  /* Sombra al pasar el mouse para dar efecto de que la card se levanta */
+  /* 0 = sin desplazamiento horizontal */
+  /* 4px = sombra va 4px hacia abajo */
+  /* 12px = que tan difusa es la sombra */
+  /* rgba(0,0,0,0.15) = negro con 15% de opacidad, muy suave */
+}
+
+/* .seleccionado se aplica cuando JS agrega esa clase a la card */
+.tarjeta.seleccionado {
+  border: 2px solid #1a1aff;
+  /* Borde azul mas grueso para indicar que el juego esta seleccionado */
+}
+
+/* .tarjeta img selecciona las imagenes que JS pone dentro de cada card */
+.tarjeta img {
+  width: 100%;
+  /* La imagen ocupa todo el ancho de la card */
+
+  height: 120px;
+  /* Altura fija para que todas las imagenes tengan el mismo tamaño */
+
+  object-fit: cover;
+  /* Si la imagen no es cuadrada, la recorta para llenar el espacio sin deformarse */
+
+  border-radius: 6px;
+  /* Esquinas redondeadas en la imagen */
+
+  background-color: #ddd;
+  /* Color gris mientras carga la imagen */
+
+  display: block;
+  /* Quita el espacio que aparece debajo de las imagenes por defecto */
+
+  margin-bottom: 10px;
+  /* Espacio entre la imagen y el nombre del juego */
+}
+
+/* .sin-imagen es el div gris que aparece cuando el juego no tiene imagen */
+.tarjeta .sin-imagen {
+  width: 100%;
+  /* Ocupa todo el ancho de la card */
+
+  height: 120px;
+  /* Misma altura que tendria la imagen */
+
+  background-color: #e0e0e0;
+  /* Gris claro */
+
+  border-radius: 6px;
+
+  display: flex;
+  /* Para poder centrar el texto adentro */
+
+  align-items: center;
+  /* Centra verticalmente */
+
+  justify-content: center;
+  /* Centra horizontalmente */
+
+  color: #aaa;
+  /* Gris para el texto "Sin imagen" */
+
+  font-size: 13px;
+
+  margin-bottom: 10px;
+}
+
+/* .tarjeta h3 selecciona el titulo del juego dentro de la card */
+.tarjeta h3 {
+  font-size: 14px;
+  margin-bottom: 8px;
+  /* Espacio abajo del titulo antes de los datos */
+}
+
+/* .tarjeta p selecciona los parrafos de info dentro de la card */
+.tarjeta p {
+  font-size: 12px;
+  /* Letra pequena para la info secundaria */
+
+  color: #666;
+  /* Gris para que se vea menos importante que el titulo */
+
+  margin: 3px 0;
+  /* Poco espacio entre cada linea de info */
+}
+
+/* Los botones de Editar y Eliminar dentro de cada card */
+.tarjeta .btn-editar,
+.tarjeta .btn-eliminar {
+  margin-top: 8px;
+  /* Espacio arriba para separarse del ultimo parrafo */
+}
+
+
+/* ================================
+   SEPARADOR ENTRE VISTAS
+   La franja azul que divide usuario y admin
+================================ */
+
+.separador {
+  background-color: #1a1aff;
+  /* Fondo azul fuerte para que resalte */
+
+  color: white;
+  text-align: center;
+  padding: 20px;
+
+  margin-top: 20px;
+  /* Espacio arriba para separarse de las cards */
+}
+
+.separador h2 {
+  font-size: 20px;
+}
+
+
+/* ================================
+   FORMULARIO DE ADMINISTRADOR
+================================ */
+
+/* .formulario-admin selecciona el <form> con esa clase */
+.formulario-admin {
+  background-color: white;
+  /* Fondo blanco para que se diferencie del fondo azul claro de la pagina */
+
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 24px;
+
+  max-width: 500px;
+  /* Ancho maximo. No se estira mas de 500px aunque la pantalla sea grande */
+
+  margin: 24px auto;
+  /* 24px arriba/abajo, auto a los lados para centrarlo */
+}
+
+.formulario-admin h3 {
+  color: #1a1aff;
+  margin-bottom: 16px;
+}
+
+/* Los textos descriptivos de cada campo del formulario */
+.formulario-admin label {
+  display: block;
+  /* Lo pone en su propia linea, separado del input de abajo */
+
+  font-size: 13px;
+  color: #444;
+
+  margin-top: 12px;
+  /* Espacio arriba para separarlo del campo anterior */
+
+  margin-bottom: 4px;
+  /* Poco espacio abajo antes del input */
+}
+
+/* Los inputs y el select dentro del formulario de admin */
+/* La coma significa "aplica esto a ambos selectores" */
+.formulario-admin input,
+.formulario-admin select {
+  width: 100%;
+  /* Ocupan todo el ancho del formulario */
+
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Todos los botones dentro del formulario de admin */
+.formulario-admin button {
+  margin-top: 16px;
+  /* Espacio arriba para separarse del ultimo campo */
+
+  width: 100%;
+  /* Ocupa todo el ancho del formulario */
+
+  padding: 10px;
+  background-color: #1a1aff;
+  /* Azul por defecto */
+
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.formulario-admin button:hover {
+  background-color: #1010cc;
+  /* Azul mas oscuro al pasar el mouse */
+}
+
+/* .btn-reset-db sobreescribe los estilos del boton normal */
+/* El !important obliga a usar este color aunque haya otro estilo que diga diferente */
+.btn-reset-db {
+  background-color: #cc0000 !important;
+  /* Rojo para indicar que es una accion peligrosa */
+
+  margin-top: 8px !important;
+  /* Poco espacio entre el boton de agregar y este */
+}
+
+.btn-reset-db:hover {
+  background-color: #aa0000 !important;
+  /* Rojo mas oscuro al pasar el mouse */
+}
+
+
+/* ================================
+   BOTONES DE EDITAR Y ELIMINAR
+   Aparecen dentro de cada card
+================================ */
+
+.btn-editar {
+  padding: 4px 10px;
+  /* Mas chico que los botones normales */
+
+  background-color: #f0f0ff;
+  /* Fondo azul muy claro */
+
+  color: #1a1aff;
+  /* Texto azul */
+
+  border: 1px solid #1a1aff;
+  /* Borde azul */
+
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  /* Letra chica para que quepa en la card */
+
+  margin-right: 4px;
+  /* Separacion entre el boton editar y el de eliminar */
+}
+
+.btn-eliminar {
+  padding: 4px 10px;
+  background-color: #fff0f0;
+  /* Fondo rojo muy claro para indicar accion de borrar */
+
+  color: #cc0000;
+  /* Texto rojo */
+
+  border: 1px solid #cc0000;
+  /* Borde rojo */
+
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+/* Al pasar el mouse, los botones se vuelven del color solido */
+.btn-editar:hover {
+  background-color: #1a1aff;
+  /* Azul solido */
+  color: white;
+}
+
+.btn-eliminar:hover {
+  background-color: #cc0000;
+  /* Rojo solido */
+  color: white;
+}
+
+
+/* ===================================================== */
+/* MEJORAS PARA EL HEADER - ESTILO LUDOTECA              */
+/* ===================================================== */
+
+/* Mejora la barra de navegación */
+nav {
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Estilo para el logo y título */
+nav img {
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+nav img:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo para el título PlayGest */
+nav h1 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1.2rem;
+    background: linear-gradient(135deg, #1a1aff, #4444ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-right: 20px;
+}
+
+/* Separador entre el título y los links */
+nav h1::after {
+    content: "|";
+    color: #ccc;
+    margin-left: 20px;
+    font-weight: normal;
+}
+
+/* Mejora los links de navegación */
+nav a {
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+nav a:hover {
+    transform: translateY(-2px);
+}
+
+/* Link activo más llamativo */
+nav a.activo {
+    box-shadow: 0 2px 8px rgba(26, 26, 255, 0.3);
+}
+
+/* Responsive para el nav */
+@media screen and (max-width: 700px) {
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+    
+    nav h1 {
+        font-size: 1rem;
+        margin-right: 0;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    
+    nav h1::after {
+        display: none;
+    }
+    
+    nav img {
+        width: 40px !important;
+    }
+}
+
+
+/* ===================================================== */
+/* ARREGLO PARA QUE NO SE MUEVA NADA AL HACER ZOOM       */
+/* ===================================================== */
+
+/* Fija un ancho mínimo para que todo se vea completo */
+body {
+    min-width: 800px;
+    overflow-x: auto;
+}
+
+/* La barra de navegación NO se envuelve, todo en una línea */
+nav {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 750px;
+}
+
+/* Evita que los textos se rompan */
+nav a, nav h1 {
+    white-space: nowrap;
+}
+
+/* El contenedor de tarjetas mantiene su tamaño */
+.tarjetas {
+    min-width: 700px;
+}
+
+/* Las tarjetas mantienen su ancho fijo */
+.tarjeta {
+    flex-shrink: 0;
+}
+
+/* Filtros mantienen su posición */
+.filtros {
+    min-width: 700px;
+}
+
+/* Botón de préstamo no se mueve */
+#boton-prestamo {
+    min-width: 200px;
+}

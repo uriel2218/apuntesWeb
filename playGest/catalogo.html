@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+
+  <meta charset="UTF-8">
+  <title>PlayGest - Catalogo</title>
+
+  <link rel="stylesheet" href="css/estilos.css">
+
+</head>
+
+<body>
+
+  <!-- ================================
+       NAVEGACION
+  ================================ -->
+
+  <nav class="barra">
+        <img src="img/logoply.jpg.jpeg" style="display: inline-block; vertical-align: middle; width: 100px; margin-right: 60px;">
+        <h1 style="display: inline-block; vertical-align: middle;">PlayGest</h1>
+        <a href="ludoteca.html" class="caja">Inicio</a>
+        <a href="catalogo.html" class="caja">Juegos</a>
+        <a href="indexForm.html" class="caja" style="margin-right:10px;">Realizar Préstamo</a>
+    </nav>
+
+
+  <!-- ================================
+       VISTA USUARIO
+  ================================ -->
+
+  <h1>Catalogo de Juegos</h1>
+
+  <div class="filtros">
+  <!-- class="filtros" le dice al CSS como ponerle estilo -->
+
+    <input type="text" id="buscador" placeholder="Buscar juego..." oninput="filtrar()">
+    <!-- input es una caja de texto donde el usuario escribe y llama a filtrar() cada vez que el usuario escribe una letra -->
+
+    <select id="filtro-dificultad" onchange="filtrar()">
+    <!-- select es el menu desplegable de dificultad -->
+
+      <option value="">Dificultad</option>
+      <!-- La opcion que aparece por defecto. value="" significa sin filtro -->
+
+      <option value="Facil">Facil</option>
+      <!-- Cuando el usuario elige esto, JS lee value="Facil" -->
+
+      <option value="Media">Media</option>
+      <option value="Dificil">Dificil</option>
+
+    </select>
+
+  </div>
+
+  <p id="mensaje-seleccion">Seleccionados: 0 / 3</p>
+
+  <button id="boton-prestamo" onclick="irAPrestamo()">Solicitar prestamo →</button>
+  <!-- button es un boton clickeable -->
+
+  <p id="contador"></p>
+  <!-- Parrafo que muestra cuantos juegos hay en el catalogo -->
+
+  <div class="tarjetas" id="contenedor-tarjetas"></div>
+
+
+  <!-- ================================
+       VISTA ADMINISTRADOR
+  ================================ -->
+
+  <div class="separador">
+  <!-- separar las dos vistas -->
+
+    <h2>Panel de Administrador</h2>
+
+  </div>
+
+  <form id="form" class="formulario-admin">
+
+    <h3 id="titulo-form">Agregar juego nuevo</h3>
+
+    <label>Nombre del juego</label>
+    <!-- label es el texto que le dice que escribir en el input de abajo -->
+    <input type="text" id="nombreJuego" placeholder="Nombre del juego">
+
+    <label>Dificultad</label>
+
+    <select id="dificultad">
+
+      <option value="Facil">Facil</option>
+      <option value="Media">Media</option>
+      <option value="Dificil">Dificil</option>
+
+    </select>
+
+    <label>Edad recomendada</label>
+
+    <input type="text" id="edad" placeholder="ej: 18+">
+
+    <label>Numero de jugadores</label>
+
+    <input type="text" id="jugadores" placeholder="ej: 1-4">
+
+    <label>Imagen (nombre del archivo en carpeta imagenes/)</label>
+
+    <input type="text" id="imagen" placeholder="ej: minecraft.jpg">
+
+    <button type="submit">Agregar juego</button>
+
+    <button type="button" class="btn-reset-db" onclick="resetearBaseDatos()">🗑 Borrar todos los juegos</button>
+
+  </form>
+
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>
