@@ -50,15 +50,15 @@
                 <div class="card border border-2 shadow-sm rounded-4 p-4" style="width: 100%; max-width: 450px;">
                     <h4 class="fw-bold mb-4">Solicitud de Préstamo de Juego</h4>
                     
-                    <form>
+                    <form id="formPrestamo">
                         <div class="mb-3">
                             <label class="form-label fw-semibold mb-1">Nombre de Usuario</label>
-                            <input type="text" class="form-control" placeholder="Escribe tu usuario">
+                            <input type="text" class="form-control" placeholder="Escribe tu usuario" required>
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label fw-semibold mb-1">Número de Personas</label>
-                            <input type="text" class="form-control" placeholder="ej. 4">
+                            <input type="text" class="form-control" placeholder="ej. 4" required>
                         </div>
 
                         <div class="mb-4">
@@ -76,15 +76,13 @@
                             </select>
                         </div>
 
-                        <button type="button" class="btn btn-primary w-100 rounded-pill py-2 mb-2" style="background-color: #2435b3; border-color: #2435b3;">
+                        <button type="submit" class="btn btn-primary w-100 rounded-pill py-2 mb-2" style="background-color: #2435b3; border-color: #2435b3;">
                             Enviar Solicitud de Préstamo
                         </button>
                         
                         <p class="text-center text-dark small fw-medium mb-3">
                             *La solicitud se procesará en las próximas 24 horas.*
                         </p>
-
-                        
                     </form>
                 </div>
 
@@ -94,7 +92,6 @@
 
     <footer class="container-fluid px-5 py-5 border-top mt-4 bg-white">
         <div class="row">
-
             <div class="col-6 col-md-3 mb-4">
                 <h6 class="text-muted fw-bold mb-3">Nuestras redes sociales</h6>
                 <ul class="list-unstyled">
@@ -107,5 +104,6 @@
         </div>
     </footer>
 
+    <script src="js/main.js"></script>
 </body>
 </html>
