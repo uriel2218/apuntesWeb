@@ -1,16 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-    const path = window.location.pathname;
-
-    if (path.includes('indexForm.html')) {
-        logicaFormulario();
-    } else if (path.includes('indexConfirm.html')) {
-        logicaConfirmacion();
-    } else if (path.includes('indexSolicitudes.html')) {
-        logicaAdmin();
-    }
+    // Inicializar la vista unificada
+    logicaPrototipoUnificado();
 });
-
 
 function obtenerSolicitudes() {
     const datos = localStorage.getItem('solicitudes');
@@ -21,79 +12,64 @@ function guardarSolicitudes(solicitudes) {
     localStorage.setItem('solicitudes', JSON.stringify(solicitudes));
 }
 
+function logicaPrototipoUnificado() {
+    // 1. Cargar la lista inicial de solicitudes
+    actualizarListaAdmin();
 
-function logicaFormulario() {
-    const form = document.getElementById('formPrestamo') || document.querySelector('form');
+    // 2. Manejar el envío del formulario
+    const form = document.getElementById('formPrestamo');
     
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
+    if(form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
 
-        
-        const usuario = form.querySelector('input[placeholder*="usuario"]').value;
-        const personas = form.querySelector('input[placeholder*="ej. 4"]').value;
-        const juegoSelect = form.querySelector('select');
-        const juegoNombre = juegoSelect.options[juegoSelect.selectedIndex].text;
+            const inputUsuario = form.querySelector('input[placeholder*="usuario"]');
+            const inputPersonas = form.querySelector('input[placeholder*="ej. 4"]');
+            const selectJuego = form.querySelector('select');
+            
+            const usuario = inputUsuario.value;
+            const personas = inputPersonas.value;
+            const juegoNombre = selectJuego.options[selectJuego.selectedIndex].text;
 
-        if (!usuario || !personas || juegoSelect.value === "Selecciona un juego") {
-            alert("Por favor, llena todos los campos.");
-            return;
-        }
+            const solicitudes = obtenerSolicitudes();
+            const nuevoId = solicitudes.length > 0 ? solicitudes[solicitudes.length - 1].id + 1 : 1001;
+            const codigoConfirmacion = `PG-${nuevoId}`;
 
-        const solicitudes = obtenerSolicitudes();
-        
-        // Crear ID autoincremental (Código de confirmación)
-        const nuevoId = solicitudes.length > 0 ? solicitudes[solicitudes.length - 1].id + 1 : 1001;
-        const codigoConfirmacion = `PG-${nuevoId}`;
+            const nuevaSolicitud = {
+                id: nuevoId,
+                codigo: codigoConfirmacion,
+                usuario: usuario,
+                personas: personas,
+                juego: juegoNombre,
+                estado: 'Pendiente'
+            };
 
-        const nuevaSolicitud = {
-            id: nuevoId,
-            codigo: codigoConfirmacion,
-            usuario: usuario,
-            personas: personas,
-            juego: juegoNombre,
-            estado: 'Pendiente'
-        };
+            solicitudes.push(nuevaSolicitud);
+            guardarSolicitudes(solicitudes);
 
-        solicitudes.push(nuevaSolicitud);
-        guardarSolicitudes(solicitudes);
+            // Simular pantalla de confirmación con un alert
+            alert(`¡Solicitud Registrada con éxito!\n\nJuego: ${juegoNombre}\nCódigo de Confirmación: ${codigoConfirmacion}\nEstado: Pendiente`);
 
-        
-        localStorage.setItem('ultimaSolicitudId', nuevoId);
-
-       
-        window.location.href = 'indexConfirm.html';
-    });
-}
-
-
-function logicaConfirmacion() {
-    const idBuscado = localStorage.getItem('ultimaSolicitudId');
-    if (!idBuscado) return;
-
-    const solicitudes = obtenerSolicitudes();
-    const data = solicitudes.find(s => s.id == idBuscado);
-
-    if (data) {
-        document.getElementById('confirmationCode').innerText = data.codigo;
-        document.getElementById('listaJuegos').innerText = data.juego;
-        
-        const estatus = document.getElementById('estatusReservacion') || document.getElementById('reservationStatus');
-        estatus.innerHTML = `<span class="badge bg-warning text-dark">${data.estado}</span>`;
+            // Limpiar formulario y actualizar la lista de abajo
+            form.reset();
+            actualizarListaAdmin();
+        });
     }
 }
 
-
-function logicaAdmin() {
+// Función para pintar la lista de administrador
+function actualizarListaAdmin() {
     const contenedor = document.getElementById('contenedorSolicitudes');
     const contador = document.getElementById('contadorSolicitudes');
-    const solicitudes = obtenerSolicitudes();
+    if (!contenedor || !contador) return;
 
-   
+    const solicitudes = obtenerSolicitudes();
     const pendientes = solicitudes.filter(s => s.estado === 'Pendiente');
+    
     contador.innerText = pendientes.length;
 
     if (pendientes.length === 0) {
-        contenedor.innerHTML = '<div class="p-4 text-center text-muted">No hay solicitudes pendientes.</div>';
+        contenedor.innerHTML = '<div class="p-5 text-center text-muted"><i class="bi bi-inbox fs-1 d-block mb-2"></i>No hay solicitudes pendientes.</div>';
         return;
     }
 
@@ -110,7 +86,7 @@ function logicaAdmin() {
                             <i class="bi bi-person-fill fs-3 text-secondary"></i>
                         </div>
                         <div>
-                            <h6 class="fw-bold mb-1">${sol.usuario} <small class="text-muted">(${sol.codigo})</small></h6>
+                            <h6 class="fw-bold mb-1">${sol.usuario} <small class="text-primary border rounded px-1 ms-1">${sol.codigo}</small></h6>
                             <p class="mb-1 text-dark small fw-medium">
                                 <i class="bi bi-controller text-muted me-1"></i> ${sol.juego}
                             </p>
@@ -134,7 +110,7 @@ function logicaAdmin() {
     });
 }
 
-
+// Función global para los botones de Aprobar/Rechazar
 window.gestionarSolicitud = function(id, accion) {
     const mensaje = accion === 'Aprobada' ? "¿Desea confirmar la solicitud?" : "¿Desea rechazar la solicitud?";
     
@@ -148,6 +124,6 @@ window.gestionarSolicitud = function(id, accion) {
         });
         
         guardarSolicitudes(solicitudes);
-        logicaAdmin(); 
+        actualizarListaAdmin(); // Refrescar la lista automáticamente
     }
 };
